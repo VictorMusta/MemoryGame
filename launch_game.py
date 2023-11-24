@@ -14,7 +14,7 @@ def print_welcome_menu():
     print("        Welcome to my Memory Game         ")
     print("A series of words will be presented to you.")
     print("The goal is to indicate whether the word has appeared before or not.")
-    print("   You earn 1 point for each correct answer. Good luck!")
+    print("   You earn 1 point for each correct answer. Good luck brotha!")
     print("*" * 50 + "\n")
 
 
