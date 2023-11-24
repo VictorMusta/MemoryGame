@@ -1,4 +1,4 @@
-# Word Reminding Game
+# Simple Python MemoryGame!
 
 ## Description
 Word Reminding Game is a simple command-line game where you have to decide if you've seen a word before or if it's new to you. The goal is to achieve the highest score by making the right choices.
