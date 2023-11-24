@@ -3,8 +3,19 @@ from random import randint
 
 
 def play_game():
+    print_welcome_menu()
     reset_seen_words()
     new_round(0)
+
+
+def print_welcome_menu():
+    clear_screen()
+    print("\n" + "*" * 50)
+    print("        Welcome to my Memory Game         ")
+    print("A series of words will be presented to you.")
+    print("The goal is to indicate whether the word has appeared before or not.")
+    print("   You earn 1 point for each correct answer. Good luck!")
+    print("*" * 50 + "\n")
 
 
 def ask_is_word_seen(word) -> bool:
@@ -32,12 +43,12 @@ def loose_game(score):
 
 
 def is_word_seen(word):
-    with open("ressources/seen_words_list.txt", 'r', encoding='utf-8') as seen_words_list_fr:
+    with open("resources/seen_words_list.txt", 'r', encoding='utf-8') as seen_words_list_fr:
         return word + '\n' in seen_words_list_fr.readlines()
 
 
 def get_random_word():
-    with open("ressources/word_list.txt", "r", encoding="utf-8") as word_list_fr:
+    with open("resources/word_list.txt", "r", encoding="utf-8") as word_list_fr:
         return random_choice(word_list_fr.readlines())
 
 
@@ -48,20 +59,20 @@ def win_round(score):
 
 
 def add_word_to_seen_words(word):
-    with open('ressources/seen_words_list.txt', "a", encoding="utf-8") as seen_word_list_fw:
+    with open('resources/seen_words_list.txt', "a", encoding="utf-8") as seen_word_list_fw:
         seen_word_list_fw.write(word + '\n')
 
 
 def load_record():
     try:
-        with open('ressources/record.txt', 'r', encoding='utf-8') as record_file:
+        with open('resources/record.txt', 'r', encoding='utf-8') as record_file:
             return int(record_file.readline().strip())
     except FileNotFoundError:
         return 0
 
 
 def save_record(record):
-    with open('ressources/record.txt', 'w', encoding='utf-8') as record_file:
+    with open('resources/record.txt', 'w', encoding='utf-8') as record_file:
         record_file.write(str(record))
 
 
@@ -85,7 +96,7 @@ def clear_screen():
 
 
 def reset_seen_words():
-    with open('ressources/seen_words_list.txt', 'w', encoding='utf-8'):
+    with open('resources/seen_words_list.txt', 'w', encoding='utf-8'):
         pass
 
 

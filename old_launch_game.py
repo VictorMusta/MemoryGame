@@ -5,7 +5,7 @@ from random import randint
 
 
 def play_game():
-    with open('ressources/seen_words_list.txt', 'w', encoding='utf-8') as used_words_fw:
+    with open('resources/seen_words_list.txt', 'w', encoding='utf-8') as used_words_fw:
         used_words_fw.writelines('')
     new_round(0)
 
@@ -39,7 +39,7 @@ def loose_game(score):
 
 
 def is_word_seen(word):
-    with open("ressources/seen_words_list.txt", 'r', encoding='utf-8') as seen_words_list_fr:
+    with open("resources/seen_words_list.txt", 'r', encoding='utf-8') as seen_words_list_fr:
         words = seen_words_list_fr.readlines()
         if word in words:
             return True
@@ -47,7 +47,7 @@ def is_word_seen(word):
 
 
 def get_random_word():
-    with open("ressources/word_list.txt", "r", encoding="utf-8") as word_list_fr:
+    with open("resources/word_list.txt", "r", encoding="utf-8") as word_list_fr:
         words = word_list_fr.readlines()
         return words[randint(0, len(words) - 1)]
 
@@ -58,7 +58,7 @@ def win_round(score):
 
 
 def add_word_to_seen_words(word):
-    with open('ressources/seen_words_list.txt', "a", encoding="utf-8") as seen_word_list_fw:
+    with open('resources/seen_words_list.txt', "a", encoding="utf-8") as seen_word_list_fw:
         seen_word_list_fw.writelines(word)
 
 
