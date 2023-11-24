@@ -20,7 +20,6 @@ The goal is to achieve the highest score by making the right choices.
 1. Run the game by executing the `launch_game.py` script.
 2. You will be presented with a word, and you need to choose if you have seen it before or if it's new.
 3. Enter '1' for SEEN or '2' for NEW.
-4. The game will continue until you make an incorrect choice.
 
 ## Installation
 
