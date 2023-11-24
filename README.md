@@ -27,7 +27,7 @@ Word Reminding Game is a simple command-line game where you have to decide if yo
 - `ressources/word_list.txt`: Contains the list of words for the game.
 - `ressources/seen_words_list.txt`: Keeps track of words that have been seen.
 - `ressources/record.txt`: Stores the highest score.
-- `old_launch_game.py`: The old main script for the game. (the new one have been optimized with chatGPT, this one is made by hand without any AI help.)
+- `old_launch_game.py`: The deprecated main script for the game. (the new one have been optimized with chatGPT, this one is made by hand without any AI help.)
 
 ## Author
 Victor Grabowski
