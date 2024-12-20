@@ -3,20 +3,30 @@ from random import randint
 
 
 def play_game():
-    print_welcome_menu()
     reset_seen_words()
-    new_round(0)
+    print_welcome_menu()
 
 
 def print_welcome_menu():
-    clear_screen()
     print("\n" + "*" * 50)
     print("        Welcome to my Memory Game         ")
     print("A series of words will be presented to you.")
     print("The goal is to indicate whether the word has appeared before or not.")
     print("   You earn 1 point for each correct answer. Good luck brotha!")
+    print("Press Ctrl+C to exit the game.")
+    print("Press 1 to start the game.")
+    print("Press 2 to reset the record.")
     print("*" * 50 + "\n")
-
+    choice = input()
+    if choice == "1":
+        new_round(0)
+    if choice == "2":
+        reset_record()
+        print_welcome_menu()
+    elif choice != "1":
+        print("Invalid choice, please try again.")
+        clear_screen()
+        print_welcome_menu()
 
 def ask_is_word_seen(word) -> bool:
     top = "Have you seen this word?"
@@ -39,7 +49,7 @@ def loose_game(score):
         save_record(score)
         print("NEW RECORD!")
     print(f"FINAL SCORE: {score}\nOLD RECORD: {record}")
-    play_again()
+    display_try_again_screen()
 
 
 def is_word_seen(word):
@@ -88,7 +98,7 @@ def new_round(score):
             loose_game(score)
     except KeyboardInterrupt:
         print("\nGame interrupted.")
-        play_again()
+        exit()
 
 
 def clear_screen():
@@ -104,7 +114,7 @@ def random_choice(choices):
     return choices[randint(0, len(choices) - 1)].strip()
 
 
-def play_again():
+def display_try_again_screen():
     choice = input("TRY AGAIN? (Y/n) ")
     if choice.lower() == "n":
         print("SEE YA!")
@@ -113,6 +123,10 @@ def play_again():
         clear_screen()
         play_game()
 
+
+def reset_record():
+    save_record(0)
+    print("Record reset to 0.")
 
 if __name__ == "__main__":
     play_game()
